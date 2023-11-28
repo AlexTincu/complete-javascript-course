@@ -1,3 +1,7 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+import { async } from 'regenerator-runtime';
+
 import * as model from './model.js';
 import { MODAL_CLOSE_SEC } from './config.js';
 import recipeView from './views/recipeView.js';
@@ -6,10 +10,6 @@ import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
-
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
-import { async } from 'regenerator-runtime';
 
 const controlRecipes = async function () {
   try {
@@ -128,4 +128,5 @@ const init = function () {
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
 };
+
 init();
